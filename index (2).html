@@ -15,8 +15,8 @@
       --primary: #16a34a;
       --primary-dark: #15803d;
       --primary-light: #22c55e;
-      --dark-bg: #000000; /* Tam siyah */
-      --dark-card: #0a0a0a; /* Çok koyu gri/siyah */
+      --dark-bg: #000000;
+      --dark-card: #0a0a0a;
       --dark-border: #1a1a1a;
       --text-primary: #ffffff;
       --text-secondary: #e5e5e5;
@@ -32,7 +32,6 @@
       position: relative;
     }
 
-    /* Arka Plan Logo Filigranı */
     body::before {
       content: "";
       position: fixed;
@@ -42,13 +41,12 @@
       height: 100%;
       background-image: url('logo_white.jpeg');
       background-repeat: repeat;
-      background-size: 250px; /* Logo boyutu */
-      opacity: 0.03; /* Çok saydam */
+      background-size: 250px;
+      opacity: 0.03;
       z-index: -1;
       pointer-events: none;
     }
 
-    /* Navigation */
     nav {
       position: sticky;
       top: 0;
@@ -100,7 +98,6 @@
       color: var(--primary-light);
     }
 
-    /* Header */
     header {
       background: radial-gradient(circle at center, #111 0%, #000 100%);
       border-bottom: 1px solid var(--dark-border);
@@ -153,6 +150,7 @@
       font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 1px;
+      text-align: center;
     }
 
     .btn-primary {
@@ -178,7 +176,6 @@
       transform: translateY(-3px);
     }
 
-    /* Sections */
     section {
       max-width: 1200px;
       margin: 0 auto;
@@ -203,26 +200,27 @@
       margin-right: auto;
     }
 
-    /* Services Grid */
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 3rem;
     }
 
     .card {
       background: var(--dark-card);
-      padding: 3.5rem;
+      padding: 3rem;
       border-radius: 0.5rem;
       border: 1px solid var(--dark-border);
       transition: all 0.5s ease;
       text-align: left;
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
       border-color: var(--primary);
       background: #050505;
-      transform: scale(1.02);
+      transform: translateY(-5px);
     }
 
     .card-icon {
@@ -243,9 +241,9 @@
       color: var(--text-secondary);
       line-height: 1.9;
       font-size: 1.1rem;
+      margin-bottom: 1.5rem;
     }
 
-    /* Features Section */
     .features {
       background: #050505;
       border: 1px solid var(--dark-border);
@@ -285,7 +283,6 @@
       line-height: 1.6;
     }
 
-    /* Contact Section */
     .contact-box {
       background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
       border: 1px solid var(--dark-border);
@@ -325,7 +322,6 @@
       font-weight: 500;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 4rem 2rem;
@@ -334,12 +330,15 @@
       border-top: 1px solid var(--dark-border);
     }
 
-    footer p {
-      font-size: 1rem;
-      letter-spacing: 1px;
+    .form-container {
+      margin-top: 2rem;
+      width: 100%;
+      height: 600px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--dark-border);
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -364,7 +363,6 @@
       }
     }
 
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -377,7 +375,6 @@
 </head>
 <body>
 
-<!-- Navigation -->
 <nav>
   <div class="nav-container">
     <div class="nav-logo-wrapper">
@@ -392,7 +389,6 @@
   </div>
 </nav>
 
-<!-- Header -->
 <header>
   <div class="header-content">
     <h1>FastGo Delivery Company</h1>
@@ -404,7 +400,6 @@
   </div>
 </header>
 
-<!-- Services Section -->
 <section id="services">
   <h2>Hizmetlerimiz</h2>
   <p class="section-subtitle">Operasyonel mükemmellik için tasarlanmış profesyonel kurye modelleri.</p>
@@ -424,7 +419,6 @@
   </div>
 </section>
 
-<!-- Why FastGo Section -->
 <section id="why">
   <h2>Neden FastGo?</h2>
   <p class="section-subtitle">Güvenilirlik, hız ve profesyonellik ilkeleriyle yanınızdayız. Biz sadece kurye hizmeti değil, güvenilir bir iş ortağı olarak hizmet veriyoruz.</p>
@@ -438,7 +432,6 @@
           <p>Ankara'nın her noktasına en optimize rotalarla en hızlı teslimat.</p>
         </div>
       </div>
-
       <div class="feature-item">
         <div class="feature-check">✓</div>
         <div class="feature-text">
@@ -446,7 +439,6 @@
           <p>Sektörde deneyimli, güler yüzlü ve eğitimli kurye ekibi.</p>
         </div>
       </div>
-
       <div class="feature-item">
         <div class="feature-check">✓</div>
         <div class="feature-text">
@@ -454,7 +446,6 @@
           <p>Operasyonel süreçlerinizde her an yanınızda olan 7/24 destek hattı.</p>
         </div>
       </div>
-
       <div class="feature-item">
         <div class="feature-check">✓</div>
         <div class="feature-text">
@@ -462,7 +453,6 @@
           <p>İşletmenizin yoğunluğuna göre değişebilen dinamik çalışma saatleri.</p>
         </div>
       </div>
-
       <div class="feature-item">
         <div class="feature-check">✓</div>
         <div class="feature-text">
@@ -470,7 +460,6 @@
           <p>Siparişlerin anlık durumu ve kurye performans takibi.</p>
         </div>
       </div>
-
       <div class="feature-item">
         <div class="feature-check">✓</div>
         <div class="feature-text">
@@ -482,31 +471,34 @@
   </div>
 </section>
 
-<!-- Application Section -->
 <section id="apply">
   <h2>Bize Katılın</h2>
-  <p class="section-subtitle">FastGo ailesine kurye olarak katılmak veya işletmeniz için profesyonel çözüm ortağı arıyorsanız doğru yerdesiniz.</p>
+  <p class="section-subtitle">FastGo ailesine katılmak veya işletmeniz için çözüm ortağı arıyorsanız doğru yerdesiniz.</p>
   
   <div class="services">
     <div class="card">
       <div class="card-icon">🏍️</div>
       <h3>Kurye Olmak İstiyorum</h3>
-      <p>Kendi motorunuzla veya şirket bünyemizde çalışmak için başvuruda bulunun. Esnek çalışma saatleri ve yüksek kazanç fırsatıyla FastGo kuryesi olun.</p>
-      <br>
-      <a href="https://wa.me/905343425850?text=Merhaba,%20kurye%20başvurusu%20yapmak%20istiyorum." class="btn btn-secondary" style="width: 100%;">Kurye Başvurusu</a>
+      <p>Kendi motorunuzla veya şirket bünyemizde çalışmak için aşağıdaki başvuru formunu doldurun. Ekibimiz sizinle en kısa sürede iletişime geçecektir.</p>
+      
+      <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe61lSwBZTWUOJTC0--thX2uAigfLRpOrjgWuGLN1eOenNlfQ/viewform?embedded=true" 
+                width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor...</iframe>
+      </div>
+      
+      <a href="https://wa.me/905343425850?text=Merhaba,%20kurye%20başvurusu%20yapmak%20istiyorum." class="btn btn-secondary" style="margin-top: 1.5rem;">WhatsApp ile Hızlı Başvuru</a>
     </div>
 
     <div class="card">
       <div class="card-icon">🤝</div>
       <h3>İş Ortağımız Olun</h3>
       <p>İşletmenizin teslimat operasyonlarını profesyonellere devredin. Sabit kurye veya havuz sistemi çözümlerimiz için hemen teklif alın.</p>
-      <br>
-      <a href="https://wa.me/905343425850?text=Merhaba,%20işletmem%20için%20kurye%20hizmeti%20almak%20istiyorum." class="btn btn-secondary" style="width: 100%;">İşletme Başvurusu</a>
+      <div style="flex-grow: 1;"></div>
+      <a href="https://wa.me/905343425850?text=Merhaba,%20işletmem%20için%20kurye%20hizmeti%20almak%20istiyorum." class="btn btn-primary" style="width: 100%;">İşletme Başvurusu Yap</a>
     </div>
   </div>
 </section>
 
-<!-- Contact Section -->
 <section id="contact">
   <div class="contact-box">
     <h2>İş Ortaklığı İçin Ulaşın</h2>
@@ -531,7 +523,6 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
   <p>© 2026 FastGo Delivery Company — Tüm hakları saklıdır. | Ankara'nın Öncü Kurye Çözümleri</p>
 </footer>
